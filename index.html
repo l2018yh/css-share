@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <!-- 圣杯布局和双飞翼布局达到的效果基本相同，都是侧边两栏宽度固定，中间栏宽度自适应。 主要的不同之处就是在解决中间部分被挡住的问题时，采取的解决办法不一样，圣杯布局是在父元素上设置了padding-left和padding-right，在给左右两边的内容设置position为relative，通过左移和右移来使得左右两边的内容得以很好的展现，而双飞翼则是在center这个div中再加了一个div来放置内容，在给这个新的div设置margin-left和margin-right  -->
+
+
+    <!-- 1 圣杯布局
+定义：圣杯布局就是常见的三栏式布局——两边等宽，中间⾃适应的三栏布局。 -->
+
+    <!-- 圣杯布局与双飞翼布局针对的都是三列左右栏固定中间栏边框自适应的网页布局（想象一下圣杯是主体是加上两个耳朵；鸟儿是身体加上一对翅膀），圣杯布局是Kevin Cornell在2006年提出的一个布局模型概念，在国内最早是由淘宝UED的工程师（传说是玉伯）改进并传播开来，在中国也有叫法是双飞翼布局，它的布局要求有几点：
+
+三列布局，中间宽度自适应，两边定宽；
+
+中间栏要在浏览器中优先展示渲染；
+
+允许任意列的高度最高； -->
+    <!-- 圣杯布局 -->
+    <!-- <section class="container">
+        <div class="center">center</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </section> -->
+
+    <!-- 双飞翼布局 -->
+    <section class="s-main">
+        <div class="center">
+            <div class="content">s-center</div>
+        </div>
+        <div class="left">s-left</div>
+        <div class="right">s-right</div>
+    </section>
+
+    <div class="images-bg"></div>
+
+
+    <!-- flex实现 -->
+    <section class="flex-main">
+        <div class="left"></div>
+        <div class="content"></div>
+        <dic class="right"></dic>
+    </section>
+
+
+
+    <!-- flex移动端应用 -->
+    <div class="m-main">
+        <header>头部</header>
+        <div class="content">中间部分</div>
+        <footer>底部</footer>
+    </div>
+</body>
+
+</html>

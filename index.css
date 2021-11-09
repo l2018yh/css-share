@@ -1,0 +1,111 @@
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+dl,
+dd,
+td,
+input,
+fieldset,
+textarea,
+option {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.images-bg {
+  width: 100%;
+  height: 300px;
+  background-image: url("../images/cloud.jpg");
+}
+/* 圣杯布局  float*/
+.container {
+  padding: 0 300px;
+  height: 300px;
+}
+.container .center,
+.container .left,
+.container .right {
+  position: relative;
+  height: 300px;
+  float: left;
+}
+.container .center {
+  width: 100%;
+  background: skyblue;
+}
+.container .left,
+.container .right {
+  width: 300px;
+  background: pink;
+}
+.container .left {
+  left: -300px;
+  margin-left: -100%;
+}
+.container .right {
+  margin-right: -300px;
+}
+.s-main .left,
+.s-main .center,
+.s-main .right {
+  float: left;
+  min-height: 130px;
+}
+.s-main .left {
+  margin-left: -100%;
+  background: #ac0;
+  width: 280px;
+}
+.s-main .right {
+  margin-left: -280px;
+  background-color: #ff0055;
+  width: 280px;
+}
+.s-main .center {
+  background-color: blue;
+  width: 100%;
+}
+.s-main .content {
+  margin: 0 280px;
+}
+.flex-main {
+  width: 100%;
+  display: flex;
+}
+.flex-main .left,
+.flex-main .right,
+.flex-main .content {
+  height: 300px;
+}
+.flex-main .content {
+  flex: 1;
+  background: pink;
+}
+.flex-main .left,
+.flex-main .right {
+  width: 240px;
+  background: skyblue;
+}
+.m-main {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.m-main header {
+  height: 56px;
+  border-bottom: 1px solid #666;
+}
+.m-main .content {
+  flex: 1;
+}
+.m-main footer {
+  height: 45px;
+  border-top: 1px solid #666;
+}

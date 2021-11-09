@@ -1,0 +1,127 @@
+
+ body,p,h1,h2,h3,h4,h5,h6,ul,dl,dd,td,input,fieldset,textarea,option{ 
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+}
+// LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 (支持IE 6+, Webkit, Firefox)，也可以借助Node.js或者Rhino在服务端运行。
+@skyblue:skyblue;
+@pink:pink;
+@leftSelector:left;
+@rightSelector:right;
+@images: "../images";
+
+.images-bg {
+    width: 100%;
+    height: 300px;
+    background-image: url("@{images}/cloud.jpg");
+}
+
+/* 圣杯布局  float*/
+.container{
+    padding: 0 300px;
+    height: 300px;
+    .center,.@{leftSelector},.@{rightSelector}{
+        position: relative;
+        height: 300px;
+        float: left;
+    }
+    .center{
+        width: 100%;
+        background: @skyblue;
+    }
+    .@{leftSelector},.@{rightSelector}{
+        width: 300px;
+        background: @pink;
+    }
+    .@{leftSelector}{
+        left: -300px;
+        margin-@{leftSelector}: -100%;
+    }
+    .@{rightSelector}{
+        margin-@{rightSelector}: -300px;
+    }
+}
+
+// 双飞翼布局
+
+.s-main{
+    .@{leftSelector}, .center, .@{rightSelector} {
+        float: left;
+        min-height: 130px;
+    }
+    .left {
+        margin-left: -100%;
+        background: #ac0;
+        width: 280px;
+    }
+
+    .right {
+        margin-left: -280px;
+        background-color: rgb(255, 0, 85);
+        width: 280px;
+    }
+    .center {
+        background-color: blue;
+        width: 100%;
+    }
+    .content{
+        margin: 0 280px;
+    }
+}
+
+// flex实现
+.flex-main{
+    width: 100%;
+    display: flex;
+    
+    .@{leftSelector},.@{rightSelector},.content{
+        height: 300px
+    }
+    .content{
+        flex: 1;
+        background: @pink;
+    }
+    .@{leftSelector},.@{rightSelector}{
+        width: 240px;
+        background: @skyblue;
+    }
+
+}
+
+
+// flex移动端应用
+
+.m-main {
+    width: 100%;
+    height:300px;
+    display: flex;
+    flex-direction: column;
+    header{
+        height: 56px;
+        border-bottom: 1px solid #666;
+    }
+    .content{
+        flex: 1;
+    }
+    footer{
+        height: 45px;
+        border-top: 1px solid #666;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
