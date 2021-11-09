@@ -4,44 +4,71 @@
     padding:0;
     box-sizing: border-box;
 }
-// LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 (支持IE 6+, Webkit, Firefox)，也可以借助Node.js或者Rhino在服务端运行。
+
 @skyblue:skyblue;
 @pink:pink;
 @leftSelector:left;
 @rightSelector:right;
 @images: "../images";
+@height-one:300px;
+@height-two:200px;
 
 .images-bg {
     width: 100%;
-    height: 300px;
-    background-image: url("@{images}/cloud.jpg");
+    height: @height-one+@height-two;
+    background: url("@{images}/cloud.jpg") no-repeat;
 }
 
 /* 圣杯布局  float*/
+
 .container{
     padding: 0 300px;
     height: 300px;
-    .center,.@{leftSelector},.@{rightSelector}{
+    .center,.left,.right{
         position: relative;
         height: 300px;
         float: left;
     }
     .center{
         width: 100%;
-        background: @skyblue;
+        background: skyblue;
     }
-    .@{leftSelector},.@{rightSelector}{
+    .left,.right{
         width: 300px;
-        background: @pink;
+        background: pink;
     }
-    .@{leftSelector}{
+    .left{
         left: -300px;
-        margin-@{leftSelector}: -100%;
+        margin-left: -100%;
     }
-    .@{rightSelector}{
-        margin-@{rightSelector}: -300px;
+    .right{
+        margin-right: -300px;
     }
 }
+// .container{
+//     padding: 0 300px;
+//     height: 300px;
+//     .center,.@{leftSelector},.@{rightSelector}{
+//         position: relative;
+//         height: 300px;
+//         float: left;
+//     }
+//     .center{
+//         width: 100%;
+//         background: @skyblue;
+//     }
+//     .@{leftSelector},.@{rightSelector}{
+//         width: 300px;
+//         background: @pink;
+//     }
+//     .@{leftSelector}{
+//         left: -300px;
+//         margin-@{leftSelector}: -100%;
+//     }
+//     .@{rightSelector}{
+//         margin-@{rightSelector}: -300px;
+//     }
+// }
 
 // 双飞翼布局
 
@@ -89,26 +116,6 @@
 
 }
 
-
-// flex移动端应用
-
-.m-main {
-    width: 100%;
-    height:300px;
-    display: flex;
-    flex-direction: column;
-    header{
-        height: 56px;
-        border-bottom: 1px solid #666;
-    }
-    .content{
-        flex: 1;
-    }
-    footer{
-        height: 45px;
-        border-top: 1px solid #666;
-    }
-}
 
 
 

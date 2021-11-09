@@ -1,0 +1,56 @@
+// flex移动端应用
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.flex-main {
+    width: 100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+
+    header,footer{
+        height: 56px;
+        background: pink;
+    }
+    .content{
+        flex: 1;  
+        overflow-y: auto;
+        background: #34d7dd;
+    }
+}
+
+
+.pro-main{
+    position: relative;
+    width: 100%;
+    height:100vh;
+
+    header{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 45px;
+        background: pink;
+    }
+    .content{
+        height: calc(100vh - 90px);
+        padding: 45px 0;
+        background: #34d7dd;
+        overflow-y: auto;
+
+        .main{
+            height: 1200px;
+        }
+    }
+    footer{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 45px;
+        background: pink;
+    }
+}

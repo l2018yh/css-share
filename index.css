@@ -20,8 +20,8 @@ option {
 }
 .images-bg {
   width: 100%;
-  height: 300px;
-  background-image: url("../images/cloud.jpg");
+  height: 500px;
+  background: url("../images/cloud.jpg") no-repeat;
 }
 /* 圣杯布局  float*/
 .container {
@@ -91,21 +91,4 @@ option {
 .flex-main .right {
   width: 240px;
   background: skyblue;
-}
-.m-main {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-}
-.m-main header {
-  height: 56px;
-  border-bottom: 1px solid #666;
-}
-.m-main .content {
-  flex: 1;
-}
-.m-main footer {
-  height: 45px;
-  border-top: 1px solid #666;
 }
